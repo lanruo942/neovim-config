@@ -16,6 +16,8 @@ lualine.setup({
 	},
 	extensions = { "nvim-tree", "toggleterm" },
 	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = {
 			"filename",
 			-- {
@@ -42,8 +44,7 @@ lualine.setup({
 			"encoding",
 			"filetype",
 		},
-		lualine_y = {
-			"progress",
-		},
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 	},
 })
