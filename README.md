@@ -1,5 +1,5 @@
 ![macOS](https://img.shields.io/badge/macOS-%23.svg?style=flat-square&logo=apple&color=000000&logoColor=white)
-![neovim](https://img.shields.io/badge/Neovim-0.7.2-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green)
+![neovim](https://img.shields.io/badge/Neovim-0.8.0-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green)
 ![Lua](https://img.shields.io/github/languages/top/lanruo942/neovim-config?logo=lua)
 ![License](https://img.shields.io/github/license/lanruo942/neovim-config)
 
