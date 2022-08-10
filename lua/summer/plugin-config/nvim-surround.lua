@@ -5,25 +5,19 @@ if not status_ok then
 end
 
 surround.setup({
-	delimiters = {
-		pairs = { -- Remaps "a" and "b"
-			["a"] = {
-				{ "this", "has", "several", "lines" },
-				"single line",
-			},
-			["b"] = function()
-				return {
-					"hello",
-					"world",
-				}
-			end,
-		},
-		HTML = { -- Disables HTML-style mappings
-			["t"] = false,
-			["T"] = false,
-		},
+	keymaps = {
+		insert = "<C-g>s",
+		insert_line = "<C-g>S",
+		normal = "ys",
+		normal_cur = "yss",
+		normal_line = "yS",
+		normal_cur_line = "ySS",
+		visual = "S",
+		visual_line = "gS",
+		delete = "ds",
+		change = "cs",
 	},
-	highlight_motion = { -- Disables highlights
+	highlight = { -- Disables highlights
 		duration = false,
 	},
 })
