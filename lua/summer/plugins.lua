@@ -14,6 +14,8 @@ packer.startup({
 		-- fzf
 		-- use({ "junegunn/fzf", run = ":call fzf#install()" })
 		-- use({ "junegunn/fzf.vim" })
+		-- winbar
+		-- use('fgheng/winbar.nvim')
 		-- color-picker
 		use("ziontee113/color-picker.nvim")
 		-- surround
