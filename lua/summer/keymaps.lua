@@ -86,5 +86,9 @@ keymap("n", "<leader>g", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
 -- trouble.nvim
 keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
 
+-- nvim-ufo
+vim.keymap.set("n", "zr", require('ufo').openAllFolds)
+vim.keymap.set("n", "zm", require('ufo').closeAllFolds)
+
 -- insert mode shift + enter to next line
 -- keymap("i", "<S-CR>", "<C-[>o", opts)

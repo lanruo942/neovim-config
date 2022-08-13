@@ -46,6 +46,11 @@ local options = {
 	list = true,
 	listchars = "tab:  ,space:·,eol:↴", -- set the list characters
 	wildmenu = true, -- enable wildmenu
+	foldcolumn = "1",
+	foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
+	foldlevelstart = 99,
+	foldenable = true,
+	foldnestmax = 0,
 }
 
 vim.opt.shortmess:append("c")

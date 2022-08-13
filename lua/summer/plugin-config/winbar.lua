@@ -1,6 +1,7 @@
 local status_ok, winbar = pcall(require, "winbar")
 if not status_ok then
 	vim.notify("winbar not found!")
+	return
 end
 
 winbar.setup({

@@ -1,6 +1,7 @@
 local status_ok, color_picker = pcall(require, "color-picker")
 if not status_ok then
 	vim.notify("color-picker not found!")
+	return
 end
 
 local opts = { noremap = true, silent = true }

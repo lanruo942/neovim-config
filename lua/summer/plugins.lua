@@ -16,6 +16,8 @@ packer.startup({
 		-- use({ "junegunn/fzf.vim" })
 		-- winbar
 		-- use('fgheng/winbar.nvim')
+		-- nvim-ufo: code fold
+		use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 		-- color-picker
 		use("ziontee113/color-picker.nvim")
 		-- surround
