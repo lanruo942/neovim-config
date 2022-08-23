@@ -24,7 +24,8 @@ local servers = {
 	"html",
 	"jsonls",
 	"vimls",
-	"yamlls"
+	"yamlls",
+	"tailwindcss",
 }
 
 local MASON_LSPCONFIG_SETTINGS = {
@@ -160,4 +161,25 @@ lspconfig["yamlls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
+})
+
+lspconfig["tailwindcss"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	settings = {
+		tailwindCSS = {
+			classAttributes = { "class", "className", "classList", "ngClass" },
+			lint = {
+				cssConflict = "warning",
+				invalidApply = "error",
+				invalidConfigPath = "error",
+				invalidScreen = "error",
+				invalidTailwindDirective = "error",
+				invalidVariant = "error",
+				recommendedVariantOrder = "warning",
+			},
+			validate = true,
+		},
+	},
 })
