@@ -98,6 +98,17 @@ lspconfig["emmet_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
+	filetypes = {
+		"html",
+		"typescriptreact",
+		"javascriptreact",
+		"typescript",
+		"javascript",
+		"css",
+		"sass",
+		"scss",
+		"less",
+	},
 })
 
 lspconfig["eslint"].setup({
