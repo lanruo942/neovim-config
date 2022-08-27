@@ -34,9 +34,9 @@ null_ls.setup({
 			},
 			-- args see: https://prettier.io/docs/en/options.html
 			-- args for javascriptreact
-			extra_args = { "--use-tabs", "--no-semi", "--single-quote" },
+			--[[ extra_args = { "--use-tabs", "--no-semi", "--single-quote" }, ]]
 			-- args for typescriptreact
-			--[[ extra_args = { "--use-tabs", "--single-quote" }, ]]
+			extra_args = { "--use-tabs", "--single-quote" },
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
