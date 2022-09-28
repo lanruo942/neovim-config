@@ -33,7 +33,7 @@ packer.startup({
 		-- lsp-status
 		use("nvim-lua/lsp-status.nvim")
 		-- copilot
-		use("github/copilot.vim")
+		--[[ use("github/copilot.vim") ]]
 		-- comment
 		use("numToStr/Comment.nvim")
 		-- autopairs
