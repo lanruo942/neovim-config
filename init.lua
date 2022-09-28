@@ -15,7 +15,7 @@ else
 	require("summer.plugin-config.project")
 	require("summer.plugin-config.nvim-treesitter")
 	require("summer.plugin-config.indent-blankline")
-	--[[ require("summer.plugin-config.gitsigns") ]]
+	require("summer.plugin-config.gitsigns")
 	require("summer.plugin-config.nvim-autopairs")
 	require("summer.plugin-config.comment")
 	require("summer.plugin-config.lsp-status")
