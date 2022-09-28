@@ -15,7 +15,7 @@ else
 	require("summer.plugin-config.project")
 	require("summer.plugin-config.nvim-treesitter")
 	require("summer.plugin-config.indent-blankline")
-	require("summer.plugin-config.gitsigns")
+	--[[ require("summer.plugin-config.gitsigns") ]]
 	require("summer.plugin-config.nvim-autopairs")
 	require("summer.plugin-config.comment")
 	require("summer.plugin-config.lsp-status")
@@ -24,7 +24,7 @@ else
 	require("summer.plugin-config.nvim-surround")
 	require("summer.plugin-config.color-picker")
 	require("summer.plugin-config.nvim-ufo")
-	-- require("summer.plugin-config.winbar")
+	require("summer.plugin-config.winbar")
 	require("summer.cmp")
 	require("summer.lsp")
 	require("summer.lsp.null-ls")

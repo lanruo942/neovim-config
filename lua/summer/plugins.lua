@@ -15,7 +15,7 @@ packer.startup({
 		-- use({ "junegunn/fzf", run = ":call fzf#install()" })
 		-- use({ "junegunn/fzf.vim" })
 		-- winbar
-		-- use('fgheng/winbar.nvim')
+		use('fgheng/winbar.nvim')
 		-- nvim-ufo: code fold
 		use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 		-- color-picker
