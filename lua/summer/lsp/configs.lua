@@ -26,6 +26,7 @@ local servers = {
 	"vimls",
 	"yamlls",
 	"tailwindcss",
+	"flow",
 }
 
 local MASON_LSPCONFIG_SETTINGS = {
@@ -193,4 +194,10 @@ lspconfig["tailwindcss"].setup({
 			validate = true,
 		},
 	},
+})
+
+lspconfig["flow"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
 })
