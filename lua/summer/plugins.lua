@@ -92,6 +92,8 @@ packer.startup({
 		-- lspkind
 		use("onsails/lspkind.nvim")
 		--------------------- colorschemes --------------------
+		-- catppuccin
+		use { "catppuccin/nvim", as = "catppuccin" }
 		-- tokyonight
 		use("folke/tokyonight.nvim")
 		-- OceanicNext
