@@ -27,6 +27,7 @@ local servers = {
 	"yamlls",
 	"tailwindcss",
 	"flow",
+	"vuels",
 }
 
 local MASON_LSPCONFIG_SETTINGS = {
@@ -93,6 +94,9 @@ lspconfig["cssmodules_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
+	init_options = {
+		camelCase = "dashes",
+	},
 })
 
 lspconfig["emmet_ls"].setup({
@@ -197,6 +201,12 @@ lspconfig["tailwindcss"].setup({
 })
 
 lspconfig["flow"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
+
+lspconfig("vuels").setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
