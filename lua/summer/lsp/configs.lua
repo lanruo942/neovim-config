@@ -206,7 +206,7 @@ lspconfig["flow"].setup({
 	capabilities = capabilities,
 })
 
-lspconfig("vuels").setup({
+lspconfig["vuels"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
