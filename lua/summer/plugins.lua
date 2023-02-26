@@ -14,8 +14,12 @@ packer.startup({
 		-- fzf
 		-- use({ "junegunn/fzf", run = ":call fzf#install()" })
 		-- use({ "junegunn/fzf.vim" })
+		-- git-blame
+		use("f-person/git-blame.nvim")
+		-- auto-session
+		use("rmagatti/auto-session")
 		-- winbar
-		use('fgheng/winbar.nvim')
+		use("fgheng/winbar.nvim")
 		-- nvim-ufo: code fold
 		use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 		-- color-picker
@@ -40,8 +44,8 @@ packer.startup({
 		use("windwp/nvim-autopairs")
 		-- gitsigns
 		use({
-			"lewis6991/gitsigns.nvim"
-			-- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+			"lewis6991/gitsigns.nvim",
+			tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
 		})
 		-- nvim-tree
 		use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
@@ -93,7 +97,7 @@ packer.startup({
 		use("onsails/lspkind.nvim")
 		--------------------- colorschemes --------------------
 		-- catppuccin
-		use { "catppuccin/nvim", as = "catppuccin" }
+		use({ "catppuccin/nvim", as = "catppuccin" })
 		-- tokyonight
 		use("folke/tokyonight.nvim")
 		-- OceanicNext
