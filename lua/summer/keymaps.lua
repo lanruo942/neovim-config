@@ -87,8 +87,12 @@ keymap("n", "<leader>g", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
 keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
 
 -- nvim-ufo
-vim.keymap.set("n", "zr", require('ufo').openAllFolds)
-vim.keymap.set("n", "zm", require('ufo').closeAllFolds)
+vim.keymap.set("n", "zr", require("ufo").openAllFolds)
+vim.keymap.set("n", "zm", require("ufo").closeAllFolds)
+
+-- bufferline
+keymap("n", "<", ":BufferLineCyclePrev<cr>", opts)
+keymap("n", ">", ":BufferLineCycleNext<cr>", opts)
 
 -- insert mode shift + enter to next line
 -- keymap("i", "<S-CR>", "<C-[>o", opts)
