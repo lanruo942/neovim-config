@@ -15,7 +15,7 @@ local capabilities = require("summer.lsp.handlers").capabilities
 local lsp_flags = require("summer.lsp.handlers").lsp_flags
 
 local servers = {
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"cssls",
 	"cssmodules_ls",
@@ -33,7 +33,7 @@ local servers = {
 local MASON_LSPCONFIG_SETTINGS = {
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
 	-- This setting has no relation with the `automatic_installation` setting.
-	ensure_installed = servers,
+	--[[ ensure_installed = servers, ]]
 
 	-- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
 	-- This setting has no relation with the `ensure_installed` setting.
@@ -48,7 +48,7 @@ local MASON_LSPCONFIG_SETTINGS = {
 mason_lspconfig.setup(MASON_LSPCONFIG_SETTINGS)
 
 -- whole list see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,

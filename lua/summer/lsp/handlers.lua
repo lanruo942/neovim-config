@@ -160,9 +160,6 @@ M.on_attach = function(client, bufnr)
 
 	if client.name ~= "jsonls" then
 		client.server_capabilities.documentFormattingProvider = false
-		-- client.server_capabilities.document_range_formatting = false
-		-- client.resolved_capabilities.document_formatting = false
-		-- client.resolved_capabilities.document_range_formatting = false
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
@@ -176,10 +173,7 @@ end
 
 -- Tell the server the capability of foldingRange
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-	dynamicRegistration = false,
-	lineFoldingOnly = true
-}
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
