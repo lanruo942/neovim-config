@@ -86,3 +86,13 @@ vim.cmd([[
 		autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc
 	augroup End
 ]])
+
+-- transparent background
+--[[ vim.cmd('au ColorScheme * highlight Normal guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight SignColumn guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight VertSplit guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight Folded guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight FoldColumn guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight LineNr guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight CursorLineNr guibg=none') ]]
+--[[ vim.cmd('au ColorScheme * highlight EndOfBuffer guibg=none') ]]
