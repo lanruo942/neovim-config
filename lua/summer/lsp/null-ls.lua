@@ -6,16 +6,33 @@ end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local completion = null_ls.builtins.completion
 local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		-- Formatting ---------------------
 		--  brew install shfmt
 		formatting.shfmt,
 		-- StyLua
 		formatting.stylua,
+		-- Shellcheck
+		diagnostics.shellcheck.with({
+			filetypes = {
+				"sh",
+				"zsh",
+			},
+			diagnostic_config = {
+				-- see :help vim.diagnostic.config()
+				underline = true,
+				virtual_text = false,
+				signs = true,
+				update_in_insert = false,
+				severity_sort = true,
+			},
+			diagnostics_format = "[#{c}] #{m} (#{s})",
+		}),
 		-- frontend
 		formatting.prettier.with({ -- only removed markdown
 			filetypes = {
@@ -32,6 +49,10 @@ null_ls.setup({
 				"yaml",
 				"graphql",
 			},
+			-- eslint
+			diagnostics.eslint,
+			-- spell
+			completion.spell,
 			-- args see: https://prettier.io/docs/en/options.html
 			-- args for javascriptreact
 			--[[ extra_args = { "--use-tabs", "--no-semi", "--single-quote" }, ]]
