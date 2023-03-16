@@ -14,12 +14,10 @@ packer.startup({
 		-- fzf
 		-- use({ "junegunn/fzf", run = ":call fzf#install()" })
 		-- use({ "junegunn/fzf.vim" })
-		-- git-blame
-		use("f-person/git-blame.nvim")
 		-- auto-session
 		use("rmagatti/auto-session")
-		-- winbar
-		use("fgheng/winbar.nvim")
+		-- barbecue
+		use({ "utilyre/barbecue.nvim", tag = "*", requires = { "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" } })
 		-- nvim-ufo: code fold
 		use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 		-- color-picker
@@ -45,7 +43,7 @@ packer.startup({
 		-- gitsigns
 		use({
 			"lewis6991/gitsigns.nvim",
-			tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+			--[[ tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!) ]]
 		})
 		-- nvim-tree
 		use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
@@ -54,6 +52,13 @@ packer.startup({
 		-- lualine
 		use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
 		use("arkav/lualine-lsp-progress")
+		-- galaxyline
+		--[[ use({
+			"glepnir/galaxyline.nvim",
+			branch = "main",
+			-- some optional icons
+			requires = { "nvim-tree/nvim-web-devicons", opt = true },
+		}) ]]
 		-- telescope
 		use("nvim-telescope/telescope.nvim")
 		-- project.nvim
@@ -63,7 +68,6 @@ packer.startup({
 		-- treesitter
 		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 		use("JoosepAlviste/nvim-ts-context-commentstring")
-		use("p00f/nvim-ts-rainbow")
 		use("nvim-treesitter/playground")
 		-- indent-blankline
 		use("lukas-reineke/indent-blankline.nvim")
@@ -96,6 +100,8 @@ packer.startup({
 		-- lspkind
 		use("onsails/lspkind.nvim")
 		--------------------- colorschemes --------------------
+		-- onedarkpro
+		use("olimorris/onedarkpro.nvim")
 		-- catppuccin
 		use({ "catppuccin/nvim", as = "catppuccin" })
 		-- tokyonight
