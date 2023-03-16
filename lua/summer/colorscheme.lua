@@ -1,10 +1,31 @@
 -- set catpppuccin flavour
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-local colorscheme = "catppuccin"
+--[[ local colorscheme = "catppuccin" ]]
+--[[ local colorscheme = "nord" ]]
+--[[ local colorscheme = "onelight" ]]
+
+-- setup onedarkpro
+require("onedarkpro").setup({
+	colors = {
+		onelight = {
+			bg = "#fef6e3",
+		},
+	},
+})
+-- end setup onedarkpro
+
+-- setup nord
+vim.g.nord_contrast = true
+vim.g.nord_borders = false
+vim.g.nord_disable_background = false
+vim.g.nord_italic = true
+vim.g.nord_uniform_diff_background = true
+vim.g.nord_bold = false
+-- end setup nord
 
 -- setup catppuccin
-require(colorscheme).setup({
+require("catppuccin").setup({
 	transparent_background = false,
 	term_colors = false,
 	compile = {
@@ -37,8 +58,8 @@ require(colorscheme).setup({
 	highlight_overrides = {},
 })
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+--[[ local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
 	vim.notify("colorscheme " .. colorscheme .. " not found!")
 	return
-end
+end ]]

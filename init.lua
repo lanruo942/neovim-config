@@ -1,3 +1,4 @@
+require("summer.colorscheme")
 require("summer.options")
 require("summer.keymaps")
 
@@ -6,7 +7,6 @@ if vim.g.vscode then
 else
 	-- ordinary Neovim
 	require("summer.plugins")
-	require("summer.colorscheme")
 	require("summer.plugin-config.nvim-tree")
 	require("summer.plugin-config.bufferline")
 	require("summer.plugin-config.lualine")
