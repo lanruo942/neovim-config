@@ -14,11 +14,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup({
 	disable_netrw = true,
 	hijack_netrw = true,
-	ignore_ft_on_setup = {
-		"startify",
-		"dashboard",
-		"alpha",
-	},
 	open_on_tab = false,
 	hijack_cursor = false,
 	git = {
@@ -101,6 +96,9 @@ nvim_tree.setup({
 		open_file = {
 			resize_window = true,
 			quit_on_open = true,
+		},
+		change_dir = {
+			enable = false,
 		},
 	},
 	system_open = {
