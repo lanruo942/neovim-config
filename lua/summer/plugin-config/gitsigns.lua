@@ -15,12 +15,12 @@ require("gitsigns").setup({
 		follow_files = true,
 	},
 	attach_to_untracked = true,
-	current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+	current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
 	current_line_blame_opts = {
 		virt_text = true,
 		virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-		delay = 1000,
-		ignore_whitespace = false,
+		delay = 0,
+		ignore_whitespace = true,
 	},
 	current_line_blame_formatter = function(name, blame_info, opts)
 		if blame_info.author == name then
@@ -36,10 +36,15 @@ require("gitsigns").setup({
 			else
 				date_time = os.date("%Y-%m-%d", tonumber(blame_info["author_time"]))
 			end
-			text =
-				string.format("%s%s, %s - %s", blame_info.author, blame_info.author_mail, date_time, blame_info.summary)
+			text = string.format(
+				"%s ﮮ %s ﴬ %s",
+				blame_info.author,
+				--[[ blame_info.author_mail, ]]
+				date_time,
+				blame_info.summary
+			)
 		end
-		return { { "           " .. text, "GitSignsCurrentLineBlame" } }
+		return { { "		 " .. text, "GitSignsCurrentLineBlame" } }
 	end,
 	sign_priority = 6,
 	update_debounce = 100,
