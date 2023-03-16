@@ -31,6 +31,8 @@ Most of my configuration process comes from [Neovim-from-scratch](https://github
 
 - Code format, inject LSP diagnostics, and code actions via [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
 
+- Winbar via [barbecue.nvim](https://github.com/utilyre/barbecue.nvim).
+
 # Suggestion
 
 I don't recommend you to just clone the whole repository and use it, you should have your own configuration. You can copy the parts you want and add them to your own configuration.
