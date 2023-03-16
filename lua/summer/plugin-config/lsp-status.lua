@@ -17,34 +17,34 @@ lsp_status.config({
 			return require("lsp-status.util").in_range(cursor_pos, value_range)
 		end
 	end,
-	-- status_symbol = " ",
-	-- indicator_errors = "",
-	-- indicator_warnings = "",
-	-- indicator_info = "",
-	-- indicator_hint = "",
-	-- indicator_ok = "",
+	status_symbol = " ",
+	indicator_errors = "",
+	indicator_warnings = "",
+	indicator_info = "",
+	indicator_hint = "",
+	indicator_ok = "",
 
 	-- monkey style
-	-- status_symbol = "🍌",
-	-- indicator_errors = "🙉",
-	-- indicator_warnings = "🙈",
-	-- indicator_info = "🙊",
-	-- indicator_hint = "🐒",
-	-- indicator_ok = "💫",
+	--[[ status_symbol = "🍌",
+	indicator_errors = "🙉",
+	indicator_warnings = "🙈",
+	indicator_info = "🙊",
+	indicator_hint = "🐒",
+	indicator_ok = "💫", ]]
 
 	-- emoji style
-	-- status_symbol = "🦄",
-	-- indicator_errors = "🤯",
-	-- indicator_warnings = "😰",
-	-- indicator_info = "🧐",
-	-- indicator_hint = "🤬",
-	-- indicator_ok = "🥳",
+	--[[ status_symbol = "🦄",
+	indicator_errors = "🤯",
+	indicator_warnings = "😰",
+	indicator_info = "🧐",
+	indicator_hint = "🤬",
+	indicator_ok = "🥳", ]]
 
 	-- weather style
-	status_symbol = "🏖  ",
+	--[[ status_symbol = "🏖  ",
 	indicator_errors = " ☄️ ",
 	indicator_warnings = "⚡️",
 	indicator_info = "☔️",
 	indicator_hint = " ❄️ ",
-	-- indicator_ok = "☀️",
+	indicator_ok = "☀️", ]]
 })
