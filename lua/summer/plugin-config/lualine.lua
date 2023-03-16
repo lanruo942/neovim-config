@@ -20,8 +20,7 @@ lualine.setup({
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = {
 			"filename",
-			require("auto-session-library").current_session_name,
-			--[[ { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }, ]]
+			--[[ require("auto-session-library").current_session_name, ]]
 			-- {
 			-- 	"lsp_progress",
 			-- 	spinner_symbols = { " ", " ", " ", " ", " ", " " },
@@ -32,16 +31,16 @@ lualine.setup({
 			"filesize",
 			{
 				"fileformat",
-				-- symbols = {
-				--   unix = '', -- e712
-				--   dos = '', -- e70f
-				--   mac = '', -- e711
-				-- },
 				symbols = {
+				  unix = '', -- e712
+				  dos = '', -- e70f
+				  mac = '', -- e711
+				},
+				--[[ symbols = {
 					unix = "LF",
 					dos = "CRLF",
 					mac = "CR",
-				},
+				}, ]]
 			},
 			"encoding",
 			"filetype",
