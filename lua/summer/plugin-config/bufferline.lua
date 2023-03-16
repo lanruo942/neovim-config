@@ -18,7 +18,7 @@ bufferline.setup({
 		-- as an escape hatch for people who cannot bear it for whatever reason
 		indicator = {
 			icon = "▎",
-			style = "icon",
+			style = "underline",
 		},
 		buffer_close_icon = "",
 		-- buffer_close_icon = '',
