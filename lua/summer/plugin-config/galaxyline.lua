@@ -192,6 +192,9 @@ gls.right[4] = {
 	GitBranch = {
 		provider = function()
 			local branch = require("galaxyline.provider_vcs").get_git_branch()
+			if not branch or branch == "" then
+				return ""
+			end
 			return branch .. " "
 		end,
 		condition = condition.check_git_workspace,
