@@ -24,7 +24,7 @@ nvim_tree.setup({
 	sync_root_with_cwd = false,
 	update_focused_file = {
 		enable = true,
-		update_root = false,
+		update_root = true,
 		ignore_list = {},
 	},
 	diagnostics = {
