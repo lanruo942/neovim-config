@@ -27,9 +27,11 @@ local colors = {
 	red = "#BF616A",
 	pink = "#FFACAC",
 }
+
+local fileinfo = require("galaxyline.provider_fileinfo")
 local condition = require("galaxyline.condition")
 local gls = gl.section
-gl.short_line_list = { "NvimTree", "vista", "dbui", "packer" }
+gl.short_line_list = { "NvimTree", "vista", "dbui", "packer", "help", "toggleterm" }
 
 gls.left[1] = {
 	RainbowRed = {
@@ -84,7 +86,7 @@ gls.left[4] = {
 	FileIcon = {
 		provider = "FileIcon",
 		condition = condition.buffer_not_empty,
-		highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg },
+		highlight = { fileinfo.get_file_icon_color, colors.bg },
 	},
 }
 
@@ -140,6 +142,18 @@ gls.left[11] = {
 		provider = "DiagnosticInfo",
 		icon = "  ",
 		highlight = { colors.blue, colors.bg },
+	},
+}
+
+gls.mid[1] = {
+	FilePath = {
+		provider = function()
+			local file_path = fileinfo.get_current_file_path()
+			local cwd = vim.fn.fnamemodify(file_path, ":p:h:t")
+			return cwd
+		end,
+		icon = " ",
+		highlight = { fileinfo.get_file_icon_color, colors.bg },
 	},
 }
 
