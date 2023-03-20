@@ -20,7 +20,7 @@ lualine.setup({
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = {
 			"filename",
-			--[[ require("auto-session-library").current_session_name, ]]
+			require("auto-session-library").current_session_name,
 			-- {
 			-- 	"lsp_progress",
 			-- 	spinner_symbols = { " ", " ", " ", " ", " ", " " },
