@@ -21,7 +21,7 @@ nvim_tree.setup({
 		ignore = true,
 		timeout = 500,
 	},
-	sync_root_with_cwd = false,
+	sync_root_with_cwd = true,
 	update_focused_file = {
 		enable = true,
 		update_root = true,
@@ -98,7 +98,7 @@ nvim_tree.setup({
 			quit_on_open = true,
 		},
 		change_dir = {
-			enable = false,
+			enable = true,
 		},
 	},
 	system_open = {
