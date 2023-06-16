@@ -3,9 +3,6 @@ if not mason_status_ok then
 	return
 end
 
-require("summer.lsp.configs")
-require("summer.lsp.handlers").setup()
-
 local path = require("mason-core.path")
 
 local MASON_SETTINGS = {
@@ -74,3 +71,6 @@ local MASON_SETTINGS = {
 }
 
 mason.setup(MASON_SETTINGS)
+
+require("summer.lsp.configs")
+require("summer.lsp.handlers").setup()
