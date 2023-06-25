@@ -103,9 +103,9 @@ if vim.fn.has("mac") == 1 then
 	local dark_mode = vim.fn.system("defaults read -g AppleInterfaceStyle 2>/dev/null") == "Dark\n"
 	if dark_mode then
 		vim.opt.background = "dark"
-		vim.cmd("colorscheme catppuccin")
+		vim.cmd("colorscheme nord")
 	else
 		vim.opt.background = "light"
-		vim.cmd("colorscheme onelight")
+		vim.cmd("colorscheme catppuccin")
 	end
 end
