@@ -4,6 +4,20 @@ if not status then
 	return
 end
 
+---Comment context
+---@class CommentCtx
+---@field ctype integer See |comment.utils.ctype|
+---@field cmode integer See |comment.utils.cmode|
+---@field cmotion integer See |comment.utils.cmotion|
+---@field range CommentRange
+
+---Range of the selection that needs to be commented
+---@class CommentRange
+---@field srow integer Starting row
+---@field scol integer Starting column
+---@field erow integer Ending row
+---@field ecol integer Ending column
+
 comment.setup({
 	---Add a space b/w comment and the line
 	---@type boolean|fun():boolean
