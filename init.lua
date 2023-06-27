@@ -26,6 +26,7 @@ else
 	require("summer.plugin-config.nvim-ufo")
 	require("summer.plugin-config.barbecue")
 	require("summer.plugin-config.auto-session")
+	require("summer.plugin-config.neodev")
 	require("summer.cmp")
 	require("summer.lsp")
 	require("summer.lsp.null-ls")
