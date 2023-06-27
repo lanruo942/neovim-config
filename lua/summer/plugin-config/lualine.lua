@@ -14,7 +14,7 @@ lualine.setup({
 		-- https://github.com/ryanoasis/powerline-extra-symbols
 		section_separators = { left = " ", right = "" },
 	},
-	extensions = { "nvim-tree", "toggleterm" },
+	extensions = { "nvim-tree", "toggleterm", "nvim-dap-ui", "trouble", "quickfix" },
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
@@ -32,9 +32,9 @@ lualine.setup({
 			{
 				"fileformat",
 				symbols = {
-				  unix = '', -- e712
-				  dos = '', -- e70f
-				  mac = '', -- e711
+					unix = "", -- e712
+					dos = "", -- e70f
+					mac = "", -- e711
 				},
 				--[[ symbols = {
 					unix = "LF",
