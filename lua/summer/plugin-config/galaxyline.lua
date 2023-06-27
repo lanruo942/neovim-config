@@ -31,7 +31,7 @@ local colors = {
 local fileinfo = require("galaxyline.provider_fileinfo")
 local condition = require("galaxyline.condition")
 local gls = gl.section
-gl.short_line_list = { "NvimTree", "vista", "dbui", "packer", "help", "toggleterm" }
+gl.short_line_list = { "NvimTree", "vista", "dbui", "packer", "help", "toggleterm", "dashboard" }
 
 gls.left[1] = {
 	RainbowRed = {
