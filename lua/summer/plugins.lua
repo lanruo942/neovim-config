@@ -37,7 +37,7 @@ packer.startup({
 		-- surround
 		use("kylechui/nvim-surround")
 		-- fidget
-		use("j-hui/fidget.nvim")
+		use({ "j-hui/fidget.nvim", tag = "legacy" })
 		-- trouble
 		use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 		-- impatient
