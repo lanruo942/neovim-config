@@ -14,6 +14,18 @@ packer.startup({
 		-- fzf
 		-- use({ "junegunn/fzf", run = ":call fzf#install()" })
 		-- use({ "junegunn/fzf.vim" })
+		-- neodev
+		use("folke/neodev.nvim")
+		-- which-key
+		use({
+			"folke/which-key.nvim",
+			event = "vimEnter",
+			keys = { [[<leader>]] },
+			config = function()
+				require("summer.plugin-config.which-key")
+			end,
+			disable = false,
+		})
 		-- auto-session
 		use("rmagatti/auto-session")
 		-- barbecue
