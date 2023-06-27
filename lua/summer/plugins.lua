@@ -85,6 +85,31 @@ packer.startup({
 		use("lukas-reineke/indent-blankline.nvim")
 		-- code format
 		use("jose-elias-alvarez/null-ls.nvim")
+		-------------------- Debug -------------------
+		use({
+			"mfussenegger/nvim-dap",
+			opt = true,
+			-- keys = { [[<leader>d]] },
+			module = { "dap" },
+			requires = {
+				{ "theHamsta/nvim-dap-virtual-text", module = "nvim-dap-virtual-text" },
+				"rcarriga/nvim-dap-ui",
+				"mfussenegger/nvim-dap-python",
+				"nvim-telescope/telescope-dap.nvim",
+				{ "leoluz/nvim-dap-go", module = "dap-go" },
+				{ "jbyuki/one-small-step-for-vimkind", module = "osv" },
+				{ "mxsdev/nvim-dap-vscode-js" },
+				{
+					"microsoft/vscode-js-debug",
+					opt = true,
+					run = "npm install --legacy-peer-deps && npm run compile",
+				},
+			},
+			config = function()
+				require("summer.dap").setup()
+			end,
+			disable = false,
+		})
 		--------------------- LSP --------------------
 		use({
 			"williamboman/mason.nvim", -- simple to use language server installer
