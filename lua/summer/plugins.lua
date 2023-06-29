@@ -62,15 +62,15 @@ packer.startup({
 		-- bufferline
 		use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
 		-- lualine
-		use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
-		use("arkav/lualine-lsp-progress")
+		--[[ use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
+		use("arkav/lualine-lsp-progress") ]]
 		-- galaxyline
-		--[[ use({
+		use({
 			"glepnir/galaxyline.nvim",
 			branch = "main",
 			-- some optional icons
 			requires = { "nvim-tree/nvim-web-devicons", opt = true },
-		}) ]]
+		})
 		-- telescope
 		use("nvim-telescope/telescope.nvim")
 		-- project.nvim

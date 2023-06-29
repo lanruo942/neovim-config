@@ -9,7 +9,8 @@ else
 	require("summer.plugins")
 	require("summer.plugin-config.nvim-tree")
 	require("summer.plugin-config.bufferline")
-	require("summer.plugin-config.lualine")
+	--[[ require("summer.plugin-config.lualine") ]]
+	require("summer.plugin-config.galaxyline")
 	require("summer.plugin-config.telescope")
 	require("summer.plugin-config.dashboard")
 	require("summer.plugin-config.project")
