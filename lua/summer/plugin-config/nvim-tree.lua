@@ -4,13 +4,6 @@ if not status then
 	return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 
@@ -19,7 +12,8 @@ local function on_attach(bufnr)
 	end
 
 	-- Default mappings. Feel free to modify or remove as you wish.
-	--
+	api.config.mappings.default_on_attach(bufnr)
+
 	-- BEGIN_DEFAULT_ON_ATTACH
 	vim.keymap.set("n", "<C-]>", api.tree.change_root_to_node, opts("CD"))
 	vim.keymap.set("n", "<C-e>", api.node.open.replace_tree_buffer, opts("Open: In Place"))
