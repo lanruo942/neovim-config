@@ -39,7 +39,7 @@ packer.startup({
 		-- fidget
 		use({ "j-hui/fidget.nvim", tag = "legacy" })
 		-- trouble
-		use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
+		use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
 		-- impatient
 		use("lewis6991/impatient.nvim")
 		-- toggleterm
@@ -58,11 +58,11 @@ packer.startup({
 			--[[ tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!) ]]
 		})
 		-- nvim-tree
-		use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+		use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
 		-- bufferline
-		use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
+		use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" } })
 		-- lualine
-		--[[ use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
+		--[[ use({ "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons" })
 		use("arkav/lualine-lsp-progress") ]]
 		-- galaxyline
 		use({
