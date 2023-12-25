@@ -112,7 +112,6 @@ nvim_tree.setup({
 	view = {
 		width = 30,
 		side = "left",
-		hide_root_folder = false,
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
@@ -120,6 +119,7 @@ nvim_tree.setup({
 	renderer = {
 		highlight_git = true,
 		root_folder_modifier = ":~",
+		root_folder_label = false,
 		icons = {
 			show = {
 				file = true,
