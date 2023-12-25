@@ -26,7 +26,6 @@ local servers = {
 	"vimls",
 	"yamlls",
 	"tailwindcss",
-	"vuels",
 }
 
 local MASON_LSPCONFIG_SETTINGS = {
@@ -205,14 +204,15 @@ lspconfig["flow"].setup({
 	capabilities = capabilities,
 })
 
-lspconfig["vuels"].setup({
+lspconfig["bashls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
 })
 
-lspconfig["bashls"].setup({
+lspconfig["volar"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
+	filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 })
