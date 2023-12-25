@@ -1,69 +1,50 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
+local status_ok, indent_blankline = pcall(require, "ibl")
 if not status_ok then
 	vim.notify("indent_blankline not found!")
 	return
 end
 
-vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
-
-vim.cmd [[highlight IndentBlanklineContext1 guifg=#BF616A gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineContext2 guifg=#EBCBBB gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineContext3 guifg=#A3BE8C gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineContext4 guifg=#56B6C2 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineContext5 guifg=#88C0D0 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineContext6 guifg=#B48EAD gui=nocombine]]
-
-indent_blankline.setup {
-	space_char_blankline = " ",
-	-- char_highlight_list = {
-	-- 	"IndentBlanklineIndent1",
-	-- 	"IndentBlanklineIndent2",
-	-- 	"IndentBlanklineIndent3",
-	-- 	"IndentBlanklineIndent4",
-	-- 	"IndentBlanklineIndent5",
-	-- 	"IndentBlanklineIndent6",
-	-- },
-	context_highlight_list = {
-		"IndentBlanklineContext1",
-		"IndentBlanklineContext2",
-		"IndentBlanklineContext3",
-		"IndentBlanklineContext4",
-		"IndentBlanklineContext5",
-		"IndentBlanklineContext6",
-	},
-	-- for example, context is off by default, use this to turn it on
-	show_current_context = true,
-	show_current_context_start = true,
-	context_patterns = {
-		"class",
-		"function",
-		"method",
-		"element",
-		"^if",
-		"^while",
-		"^for",
-		"^object",
-		"^table",
-		"block",
-		"arguments",
-	},
-	-- :echo &filetype
-	filetype_exclude = {
-		"dashboard",
-		"packer",
-		"terminal",
-		"help",
-		"log",
-		"markdown",
-		"TelescopePrompt",
-		"lsp-installer",
-		"lspinfo",
-		"toggleterm",
-	},
+local highlight = {
+	"RainbowRed",
+	"RainbowYellow",
+	"RainbowBlue",
+	"RainbowOrange",
+	"RainbowGreen",
+	"RainbowViolet",
+	"RainbowCyan",
+	-- "IndentBlanklineContext1",
+	-- "IndentBlanklineContext2",
+	-- "IndentBlanklineContext3",
+	-- "IndentBlanklineContext4",
+	-- "IndentBlanklineContext5",
+	-- "IndentBlanklineContext6",
+	-- "IndentBlanklineContext7",
 }
+
+local hooks = require("ibl.hooks")
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+	vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+	vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+	vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+	vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+	vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+	vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+	vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext1", { fg = "#BF616A" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext2", { fg = "#EBCBBB" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext3", { fg = "#A3BE8C" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext4", { fg = "#56B6C2" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext5", { fg = "#88C0D0" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext6", { fg = "#B48EAD" })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContext7", { fg = "#56B6C2" })
+end)
+
+indent_blankline.setup({
+	indent = {
+		highlight = highlight,
+		char = "╎",
+		tab_char = "╎"
+	},
+})
