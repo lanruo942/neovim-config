@@ -90,7 +90,7 @@ vim.keymap.set("n", "zr", require("ufo").openAllFolds)
 vim.keymap.set("n", "zm", require("ufo").closeAllFolds)
 
 -- Set the current directory to the directory where the current file is located.
-keymap("n", "<lleader>cd", ":cd %:p:h<CR>:pwd<CR>", opts)
+keymap("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", opts)
 
 -- insert mode shift + enter to next line
 -- keymap("i", "<S-CR>", "<C-[>o", opts)
