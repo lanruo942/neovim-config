@@ -4,6 +4,14 @@ if not status then
 	return
 end
 
+-- nvim-ts-context-commentstring
+require("ts_context_commentstring").setup({
+	enable_autocmd = false,
+	languages = {
+		typescript = "// %s",
+	},
+})
+
 treesitter.setup({
 	ensure_installed = "all",
 	sync_install = false,
@@ -59,11 +67,6 @@ treesitter.setup({
 			goto_node = "<cr>",
 			show_help = "?",
 		},
-	},
-	-- nvim-ts-context-commentstring
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
 	},
 })
 

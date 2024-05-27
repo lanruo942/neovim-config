@@ -119,7 +119,7 @@ packer.startup({
 		-- The completion engine
 		use("hrsh7th/nvim-cmp")
 		-- snippet engine
-		use("L3MON4D3/LuaSnip")
+		use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
 		-- cmp plugins
 		use("saadparwaiz1/cmp_luasnip")
 		use("hrsh7th/cmp-nvim-lsp")

@@ -1,10 +1,9 @@
-require("summer.colorscheme")
-require("summer.options")
-require("summer.keymaps")
-
 if vim.g.vscode then
 	-- VSCode extension
 else
+	require("summer.colorscheme")
+	require("summer.options")
+	require("summer.keymaps")
 	-- ordinary Neovim
 	require("summer.plugins")
 	require("summer.plugin-config.nvim-tree")

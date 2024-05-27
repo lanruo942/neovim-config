@@ -80,7 +80,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>w", ":Bdelete<cr>", opts)
 
 -- ToggleTerm
-keymap("n", "<leader>g", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
+keymap("n", "<leader>gs", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
 
 -- trouble.nvim
 keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
