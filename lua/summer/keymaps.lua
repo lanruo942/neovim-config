@@ -83,7 +83,13 @@ keymap("n", "<leader>w", ":Bdelete<cr>", opts)
 keymap("n", "<leader>gs", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
 
 -- trouble.nvim
-keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
+--[[ keymap("n", "<C-t>", "<cmd>Trouble diagnostics toggle<cr>", opts) ]]
+keymap("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", opts)
+keymap("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", opts)
+keymap("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", opts)
+keymap("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", opts)
+keymap("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", opts)
+keymap("n", "<leader>cQ", "<cmd>Trouble qflist toggle<cr>", opts)
 
 -- nvim-ufo
 vim.keymap.set("n", "zr", require("ufo").openAllFolds)

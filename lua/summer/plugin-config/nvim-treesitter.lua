@@ -19,7 +19,7 @@ treesitter.setup({
 	highlight = {
 		enable = true,
 		disable = {}, -- list of language that will be disabled
-		additional_vim_regex_highlighting = true,
+		additional_vim_regex_highlighting = false,
 	},
 	incremental_selection = {
 		enable = true,

@@ -25,7 +25,10 @@ packer.startup({
 				require("summer.plugin-config.which-key")
 			end,
 			disable = false,
+			requires = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" },
 		})
+		-- delimeter rainbow
+		use("luochen1990/rainbow")
 		-- auto-session
 		use("rmagatti/auto-session")
 		-- barbecue
@@ -37,9 +40,12 @@ packer.startup({
 		-- surround
 		use("kylechui/nvim-surround")
 		-- fidget
-		use({ "j-hui/fidget.nvim", tag = "legacy" })
+		use({ "j-hui/fidget.nvim" })
 		-- trouble
-		use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
+		use({
+			"folke/trouble.nvim",
+			requires = { "nvim-tree/nvim-web-devicons" },
+		})
 		-- impatient
 		use("lewis6991/impatient.nvim")
 		-- toggleterm
@@ -72,7 +78,7 @@ packer.startup({
 			requires = { "nvim-tree/nvim-web-devicons", opt = true },
 		})
 		-- telescope
-		use("nvim-telescope/telescope.nvim")
+		use({ "nvim-telescope/telescope.nvim" })
 		-- project.nvim
 		use("ahmedkhalf/project.nvim")
 		-- dashboard-nvim
@@ -83,8 +89,6 @@ packer.startup({
 		use("nvim-treesitter/playground")
 		-- indent-blankline
 		use("lukas-reineke/indent-blankline.nvim")
-		-- code format
-		use("jose-elias-alvarez/null-ls.nvim")
 		-------------------- Debug -------------------
 		use({
 			"mfussenegger/nvim-dap",
@@ -99,11 +103,11 @@ packer.startup({
 				{ "leoluz/nvim-dap-go", module = "dap-go" },
 				{ "jbyuki/one-small-step-for-vimkind", module = "osv" },
 				{ "mxsdev/nvim-dap-vscode-js" },
-				{
-					"microsoft/vscode-js-debug",
-					opt = true,
-					run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-				},
+				--[[ { ]]
+				--[[ 	"microsoft/vscode-js-debug", ]]
+				--[[ 	opt = true, ]]
+				--[[ 	run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out", ]]
+				--[[ }, ]]
 			},
 			config = function()
 				require("summer.dap").setup()
@@ -115,6 +119,23 @@ packer.startup({
 			"williamboman/mason.nvim", -- simple to use language server installer
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig", -- enable LSP
+		})
+		-- code format
+		use({
+			"jay-babu/mason-null-ls.nvim",
+			after = { "mason.nvim" },
+			requires = { "williamboman/mason.nvim", "nvimtools/none-ls.nvim" },
+			config = function()
+				require("summer.lsp.mason-null-ls")
+			end,
+		})
+		use({
+			"nvimtools/none-ls.nvim",
+			after = { "mason-null-ls.nvim" },
+			requires = { "gbprod/none-ls-shellcheck.nvim", "nvimtools/none-ls-extras.nvim" },
+			config = function()
+				require("summer.lsp.null-ls")
+			end,
 		})
 		-- The completion engine
 		use("hrsh7th/nvim-cmp")
@@ -157,6 +178,8 @@ packer.startup({
 		use("sainnhe/sonokai")
 		-- edge
 		use("sainnhe/edge")
+		--ayu
+		use("ayu-theme/ayu-vim")
 		-------------------------------------------------------
 	end,
 	config = {

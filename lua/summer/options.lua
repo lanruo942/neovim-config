@@ -75,6 +75,7 @@ vim.g.copilot_filetypes = {
 	["go"] = true,
 	["python"] = true,
 }
+vim.g.rainbow_active = 1
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
@@ -92,14 +93,17 @@ vim.cmd([[
 ]])
 
 -- transparent background
---[[ vim.cmd('au ColorScheme * highlight Normal guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight SignColumn guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight VertSplit guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight Folded guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight FoldColumn guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight LineNr guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight CursorLineNr guibg=none') ]]
---[[ vim.cmd('au ColorScheme * highlight EndOfBuffer guibg=none') ]]
+vim.cmd("au ColorScheme * highlight Normal guibg=none ctermbg=none")
+vim.cmd("au ColorScheme * highlight NonText guibg=none ctermbg=none")
+vim.cmd("au ColorScheme * highlight SignColumn guibg=none")
+vim.cmd("au ColorScheme * highlight VertSplit guibg=none")
+vim.cmd("au ColorScheme * highlight Folded guibg=none")
+vim.cmd("au ColorScheme * highlight FoldColumn guibg=none")
+vim.cmd("au ColorScheme * highlight LineNr guibg=none")
+vim.cmd("au ColorScheme * highlight CursorLineNr guibg=none")
+vim.cmd("au ColorScheme * highlight EndOfBuffer guibg=none")
+vim.cmd("au ColorScheme * highlight StatusLine guibg=none ctermbg=none")
+vim.cmd("au ColorScheme * highlight StatusLineNC guibg=none ctermbg=none")
 
 -- autoload ColorScheme
 -- Or switch automatically according to the system theme
@@ -109,7 +113,14 @@ if vim.fn.has("mac") == 1 then
 		vim.opt.background = "dark"
 		vim.cmd("colorscheme nord")
 	else
-		vim.opt.background = "light"
-		vim.cmd("colorscheme catppuccin")
+		vim.g.ayucolor = "light"
+		vim.cmd("colorscheme ayu")
+		--[[ vim.opt.background = "light" ]]
+		--[[ vim.cmd("colorscheme catppuccin") ]]
+
+		-- characters highlight
+		vim.cmd("highlight @variable guifg=#354260")
+		vim.cmd("highlight @punctuation.delimiter guifg=#aa77b5")
+		vim.cmd("highlight @punctuation.bracket guifg=#a6a09c")
 	end
 end

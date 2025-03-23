@@ -26,6 +26,7 @@ local colors = {
 	blue = "#81A1C1",
 	red = "#BF616A",
 	pink = "#FFACAC",
+	bg = "NONE"
 }
 
 local fileinfo = require("galaxyline.provider_fileinfo")
@@ -39,6 +40,8 @@ gls.left[1] = {
 			return "▊ "
 		end,
 		highlight = { colors.blue, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 gls.left[2] = {
@@ -71,6 +74,8 @@ gls.left[2] = {
 			return "  "
 		end,
 		highlight = { colors.red, colors.bg, "bold" },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 gls.left[3] = {
@@ -87,6 +92,8 @@ gls.left[4] = {
 		provider = "FileIcon",
 		condition = condition.buffer_not_empty,
 		highlight = { fileinfo.get_file_icon_color, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -104,6 +111,8 @@ gls.left[6] = {
 	LineInfo = {
 		provider = "LineColumn",
 		highlight = { colors.fg, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -111,6 +120,8 @@ gls.left[7] = {
 	PerCent = {
 		provider = "LinePercent",
 		highlight = { colors.fg, colors.bg, "bold" },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -119,6 +130,8 @@ gls.left[8] = {
 		provider = "DiagnosticError",
 		icon = "  ",
 		highlight = { colors.red, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 gls.left[9] = {
@@ -126,6 +139,8 @@ gls.left[9] = {
 		provider = "DiagnosticWarn",
 		icon = "  ",
 		highlight = { colors.yellow, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -134,6 +149,8 @@ gls.left[10] = {
 		provider = "DiagnosticHint",
 		icon = "  ",
 		highlight = { colors.cyan, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -142,6 +159,8 @@ gls.left[11] = {
 		provider = "DiagnosticInfo",
 		icon = "  ",
 		highlight = { colors.blue, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -154,6 +173,8 @@ gls.mid[1] = {
 		end,
 		icon = " ",
 		highlight = { fileinfo.get_file_icon_color, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -199,6 +220,8 @@ gls.right[3] = {
 		end,
 		condition = condition.check_git_workspace,
 		highlight = { colors.fg, colors.bg, "bold" },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -213,6 +236,8 @@ gls.right[4] = {
 		end,
 		condition = condition.check_git_workspace,
 		highlight = { colors.fg, colors.bg, "bold" },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -222,6 +247,8 @@ gls.right[5] = {
 		condition = condition.hide_in_width,
 		icon = "  ",
 		highlight = { colors.green, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 gls.right[6] = {
@@ -230,6 +257,8 @@ gls.right[6] = {
 		condition = condition.hide_in_width,
 		icon = " 柳",
 		highlight = { colors.yellow, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 gls.right[7] = {
@@ -238,6 +267,8 @@ gls.right[7] = {
 		condition = condition.hide_in_width,
 		icon = "  ",
 		highlight = { colors.red, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -247,6 +278,8 @@ gls.right[8] = {
 			return " ▊"
 		end,
 		highlight = { colors.blue, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -264,6 +297,8 @@ gls.short_line_left[2] = {
 		provider = "SFileName",
 		condition = condition.buffer_not_empty,
 		highlight = { colors.fg, colors.bg, "bold" },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }
 
@@ -271,5 +306,7 @@ gls.short_line_right[1] = {
 	BufferIcon = {
 		provider = "BufferIcon",
 		highlight = { colors.fg, colors.bg },
+		separator = " ",
+		separator_highlight = { "NONE", colors.bg },
 	},
 }

@@ -29,7 +29,7 @@ else
 	require("summer.plugin-config.neodev")
 	require("summer.cmp")
 	require("summer.lsp")
-	require("summer.lsp.null-ls")
+	--[[ require("summer.lsp.null-ls") ]]
 	require("summer.lsp.trouble")
 	require("summer.lsp.fidget")
 end

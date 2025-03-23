@@ -16,7 +16,7 @@ local lsp_flags = require("summer.lsp.handlers").lsp_flags
 
 local servers = {
 	"lua_ls",
-	"tsserver",
+	"ts_ls",
 	"cssls",
 	"cssmodules_ls",
 	"emmet_ls",
@@ -76,7 +76,7 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
@@ -210,9 +210,16 @@ lspconfig["bashls"].setup({
 	capabilities = capabilities,
 })
 
-lspconfig["volar"].setup({
+--[[ lspconfig["volar"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	flags = lsp_flags, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }, ]]
+--[[ }) ]]
+
+lspconfig["angularls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
+

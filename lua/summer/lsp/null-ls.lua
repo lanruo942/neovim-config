@@ -18,7 +18,7 @@ null_ls.setup({
 		-- StyLua
 		formatting.stylua,
 		-- Shellcheck
-		diagnostics.shellcheck.with({
+		require("none-ls-shellcheck.diagnostics").with({
 			filetypes = {
 				"sh",
 				"zsh",
@@ -50,14 +50,10 @@ null_ls.setup({
 				"graphql",
 			},
 			-- eslint
-			diagnostics.eslint,
+			require("none-ls.diagnostics.eslint").with({}),
 			-- spell
 			completion.spell,
 			-- args see: https://prettier.io/docs/en/options.html
-			-- args for javascriptreact
-			--[[ extra_args = { "--use-tabs", "--no-semi", "--single-quote" }, ]]
-			-- args for typescriptreact
-			extra_args = { "--use-tabs", "--single-quote" },
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
@@ -70,9 +66,10 @@ null_ls.setup({
 		-- }),
 		-- code actions ---------------------
 		code_actions.gitsigns,
-		code_actions.eslint.with({
+		require("none-ls.code_actions.eslint").with({
 			prefer_local = "node_modules/.bin",
 		}),
+		require("none-ls-shellcheck.code_actions"),
 	},
 	-- #{m}: message
 	-- #{s}: source name (defaults to null-ls if not specified)
