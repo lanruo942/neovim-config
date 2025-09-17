@@ -5,5 +5,13 @@ if not status_ok_for_mnl then
 end
 
 mason_null_ls.setup({
+	ensure_installed = {
+		"prettier",
+		"stylua", 
+		"eslint_d",
+		"shellcheck",
+		"shfmt"
+	},
+	automatic_installation = true,
 	handlers = {},
 })

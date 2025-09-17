@@ -29,8 +29,17 @@ packer.startup({
 		})
 		-- delimeter rainbow
 		use("luochen1990/rainbow")
-		-- auto-session
-		use("rmagatti/auto-session")
+		-- instead auto-session
+		use({
+			"folke/persistence.nvim",
+			event = "BufReadPre", 
+			config = function()
+				require("persistence").setup({
+					dir = vim.fn.stdpath("data") .. "/sessions/",
+					options = { "buffers", "curdir", "tabpages", "winsize" }
+				})
+			end
+		})
 		-- barbecue
 		use({ "utilyre/barbecue.nvim", tag = "*", requires = { "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" } })
 		-- nvim-ufo: code fold
@@ -68,21 +77,12 @@ packer.startup({
 		-- bufferline
 		use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" } })
 		-- lualine
-		--[[ use({ "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons" })
-		use("arkav/lualine-lsp-progress") ]]
-		-- galaxyline
-		use({
-			"glepnir/galaxyline.nvim",
-			branch = "main",
-			-- some optional icons
-			requires = { "nvim-tree/nvim-web-devicons", opt = true },
-		})
+		use({ "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons" })
+		use("arkav/lualine-lsp-progress") 
 		-- telescope
 		use({ "nvim-telescope/telescope.nvim" })
 		-- project.nvim
 		use("ahmedkhalf/project.nvim")
-		-- dashboard-nvim
-		use("glepnir/dashboard-nvim")
 		-- treesitter
 		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 		use("JoosepAlviste/nvim-ts-context-commentstring")

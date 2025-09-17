@@ -15,10 +15,17 @@ M.setup = function()
 
 	local config = {
 		-- disable virtual text
-		virtual_text = false,
+		virtual_text = {
+			prefix = '●',
+		},
 		-- show signs
 		signs = {
-			active = signs,
+			text = {
+				[vim.diagnostic.severity.ERROR] = signs[1].text,
+				[vim.diagnostic.severity.WARN] = signs[2].text,
+				[vim.diagnostic.severity.HINT] = signs[3].text,
+				[vim.diagnostic.severity.INFO] = signs[4].text,
+			},
 		},
 		update_in_insert = true,
 		underline = true,

@@ -76,6 +76,9 @@ vim.g.copilot_filetypes = {
 	["python"] = true,
 }
 vim.g.rainbow_active = 1
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.python3_host_prog = '/Users/summer/.pyenv/shims/python3'
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
@@ -109,14 +112,14 @@ vim.cmd("au ColorScheme * highlight StatusLineNC guibg=none ctermbg=none")
 -- Or switch automatically according to the system theme
 if vim.fn.has("mac") == 1 then
 	local dark_mode = vim.fn.system("defaults read -g AppleInterfaceStyle 2>/dev/null") == "Dark\n"
-	if dark_mode then
+	if true then
 		vim.opt.background = "dark"
 		vim.cmd("colorscheme nord")
 	else
 		vim.g.ayucolor = "light"
 		vim.cmd("colorscheme ayu")
-		--[[ vim.opt.background = "light" ]]
-		--[[ vim.cmd("colorscheme catppuccin") ]]
+		vim.opt.background = "light"
+		vim.cmd("colorscheme catppuccin")
 
 		-- characters highlight
 		vim.cmd("highlight @variable guifg=#354260")
